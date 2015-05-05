@@ -1,0 +1,2 @@
+class SobjectsController < ApplicationController
+end
