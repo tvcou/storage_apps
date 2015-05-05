@@ -4,6 +4,8 @@
 <ul>Type : <%= @sobject.type.name %></ul>
 <ul>Memo : <%= @sobject.memo %></ul>
 
+<%= link_to 'add', new_sobject_path(:pid => @sobject.id) %>
+
 <hr>
 
 <%= link_to '戻る', :sobjects %>
