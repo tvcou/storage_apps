@@ -2,6 +2,6 @@
 
 <ul>
   <% @types.each do |type| %>
-  <li><%= type.name %></li>
+  <li><%= link_to type.name, type_path(type.id) %></li>
   <% end %>
 </ul>

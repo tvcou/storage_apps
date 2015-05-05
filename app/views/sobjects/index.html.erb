@@ -2,6 +2,6 @@
 
 <ul>
   <% @sobjects.each do |sobject| %>
-  <li><%= sobject.name %></li>
+  <li><%= link_to sobject.name, sobject_path(sobject.id) %></li>
   <% end %>
 </ul>
