@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505035656) do
+ActiveRecord::Schema.define(version: 20150505081322) do
+
+  create_table "sobjects", force: :cascade do |t|
+    t.integer  "type_id"
+    t.integer  "pid"
+    t.string   "name"
+    t.string   "path"
+    t.text     "memo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "types", force: :cascade do |t|
     t.string   "name"
