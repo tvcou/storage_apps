@@ -16,4 +16,15 @@ class SobjectsController < ApplicationController
     end
   end
 
+  def create
+    @sobject = Sobject.new(sobject_params)
+    @sobject.save
+    redirect_to sobjects_path
+  end
+
+  private
+    def sobject_params
+      params.require(:sobject).permit(:name,:pid,:type_id)
+    end
+
 end
