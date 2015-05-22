@@ -23,6 +23,12 @@ class SobjectsController < ApplicationController
     redirect_to sobjects_path
   end
 
+  def destroy
+    @sobject = Sobject.find(params[:id])
+    @sobject.destroy
+    redirect_to sobjects_path
+  end
+
   private
     def sobject_params
       params.require(:sobject).permit(:name,:pid,:type_id)

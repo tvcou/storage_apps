@@ -2,6 +2,9 @@
 
 <ul>
   <% @sobjects.each do |sobject| %>
-  <li><%= link_to sobject.name, sobject_path(sobject.id) %></li>
+  <li>
+    <%= link_to sobject.name, sobject_path(sobject.id) %>
+    <%= link_to "[Delete]", sobject_path(sobject.id), method: :delete, data: { confirm: "are you sure?" } %>
+  </li>
   <% end %>
 </ul>
