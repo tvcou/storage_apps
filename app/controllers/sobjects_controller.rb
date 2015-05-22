@@ -6,6 +6,7 @@ class SobjectsController < ApplicationController
 
   def show
     @sobject = Sobject.find(params[:id])
+    @csobjects = Sobject.where(pid: params[:id])
   end
 
   def new

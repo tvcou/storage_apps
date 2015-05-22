@@ -1,8 +1,15 @@
 <ul>Name : <%= @sobject.name %></ul>
-<hr>
 <ul>Pid : <%= @sobject.pid %></ul>
 <ul>Type : <%= @sobject.type.name %></ul>
 <ul>Memo : <%= @sobject.memo %></ul>
+
+<hr>
+
+<ul>
+  <% @csobjects.each do |sobject| %>
+  <li><%= link_to sobject.name, sobject_path(sobject.id) %></li>
+  <% end %>
+</ul>
 
 <%= link_to 'add', new_sobject_path(:pid => @sobject.id) %>
 
