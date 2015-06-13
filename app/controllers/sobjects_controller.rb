@@ -10,9 +10,9 @@ class SobjectsController < ApplicationController
   end
 
   def new
-    @p_sobject = Sobject.find(params[:pid])
     @sobject = Sobject.new
-    if @p_sobject.id > 0 then
+    unless params[:pid].blank?
+      @p_sobject = Sobject.find(params[:pid])
       @sobject.pid = @p_sobject.id
     end
   end
