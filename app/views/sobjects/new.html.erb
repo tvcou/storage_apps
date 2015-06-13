@@ -3,7 +3,7 @@
 <%= form_for @sobject do |f| %>
   <p>
     <%= f.label :name %> <%= f.text_field :name %><br>
-    <%= f.label :type_id %> <%= f.text_field :type_id %><br>
+    <%= f.label :type_id %> <%= f.collection_select :type_id, Type.all, :id, :name %><br>
     <%= f.label :pid %> <%= f.text_field :pid %><br>
     <%= f.label :memo %> <%= f.text_field :memo %><br>
   </p>
